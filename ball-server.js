@@ -1,13 +1,13 @@
-var ipaddress = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
-//console.log(ipaddress);
-var port      = process.env.OPENSHIFT_NODEJS_PORT || 8080;
-//console.log(port);
+var port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
+ip   = process.env.IP   || process.env.OPENSHIFT_NODEJS_IP || '0.0.0.0'
+
+
 var express = require("express");
 var http = require("http");
 
 var app = express();
 
-var server = http.createServer(app).listen(port, ipaddress);
+var server = http.createServer(app).listen(port, ip);
 //console.log("pocuvam");
 var io = require("socket.io")(server);
 var medzera=/\s*/g;
