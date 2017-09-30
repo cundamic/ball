@@ -1,7 +1,7 @@
 {
   "name": "sio-server",
   "version": "1.0.0",
-  "description": "A sample socket io server",
+  "description": "NJ",
   "main": "ball-server.js",
   "scripts": {
     "start": "node ball-server.js"

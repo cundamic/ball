@@ -9,8 +9,6 @@ socket.on("ppri", function(message) {
 
 });
 
-
-
 socket.on("ciel", function(message) {
 
     $('#Vitaz').html(message); $('#Vitaz').attr('style','visibility:visible');
