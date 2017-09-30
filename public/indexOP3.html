@@ -110,42 +110,14 @@ Spolu bodov:<span id="Bodiky">...</span>
  <div id="kres"></div>
 <div id="Vitaz" style="visibility:hidden; position: absolute; top: 80px; left: 540px;"></div>
 
-<div id="myNav" class="overlay">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-  <div class="overlay-content">
-    <div ng-app="myApp" ng-controller="namesCtrl"  >
 
-<table border="1" width="100%" style="color:white;">
-<tr>
-<th ng-click="orderByMe('name')">Meno</th>
-<th ng-click="orderByMe('country')">Level</th>
-<th ng-click="orderByMe('tr')">Trieda</th>
-<th >Filter: <input type="text" ng-model="te"></th>
-</tr>
-<tr ng-repeat="x in names |filter :te |  orderBy:myOrderBy">
-<td>{{x.name}}</td>
-<td>{{x.country}}</td>
-<td>{{x.tr}}</td>
-<td><img ng-src="{{x.flagURL}}" width="100"></td>
-</tr>
-</table>
-
-</div> 
   </div>
 </div>
 
 
 
 
-<script>
-function openNav() {
-    document.getElementById("myNav").style.width = "100%";
-}
 
-function closeNav() {
-    document.getElementById("myNav").style.width = "0%";
-}
-</script>
 
 
 
@@ -160,18 +132,7 @@ function closeNav() {
 
 <script>
 
-angular.module('myApp', []).controller('namesCtrl', function($scope,$http) {
-   $http.get("js/poradie.json")
-   .then(function(response) {
-        $scope.names = response.data;
-        $scope.orderByMe = function(x) {
-        $scope.myOrderBy = x;
-    }
-    });
- 
 
-    
-});
  
 
 function kresba()
@@ -203,27 +164,52 @@ var boloZle;
 
 function vOtazky(){
 
-  var pa=[ 12,
-  25,
-  39,
-  54,
-  69,
-  87,
-  106,
-  112,
-  121,
-  132,
-  148,
-  164,
-  181,
-  193,
-  200,
-  208,
-  217,
-  220,
-  229,
-  239,
-  250 ];
+  var pa=	[ 12,
+65,
+99,
+150,
+174,
+201,
+220,
+241,
+256,
+270,
+287,
+297,
+315,
+334,
+340,
+365,
+376,
+394,
+410,
+426,
+442,
+463,
+483,
+500,
+512,
+537,
+544,
+550,
+558,
+567,
+570,
+579,
+597,
+628,
+655,
+686,
+692,
+710,
+720,
+727,
+737,
+748,
+767,
+776,
+785,
+790 ];
 
 lekcia=rcislo+1;
 
