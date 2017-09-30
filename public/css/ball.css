@@ -1,0 +1,123 @@
+body {font-weight: bold;
+       
+       background: url(http://codecombat.com/images/pages/home/character_lineup.png);
+       background-repeat: no-repeat;
+        background-position: right;
+
+}
+
+   .q , #casOznam, #Bodiky,{ margin: 5px;box-shadow: 10px 10px 5px #888888;}
+span {margin: 17px;}
+#Test{   border: "1 solid";
+             margin: 15px;
+             font-size: 18pt; font-family: Arial;
+             font-weight: bold; 
+             background:yellow;
+       -webkit-transition-property: background; /* Safari and Chrome */
+       -webkit-transition-duration: 5s; /* Safari and Chrome */
+      box-shadow: 10px 10px 5px #888888;
+           }
+
+meter{margin:5px;}
+
+#log{width: 500px;
+        margin:5px;
+}
+
+#bez2 {
+  width: 900px;
+  display: block;
+  border: none;
+  color: #333;
+  background: transparent;
+  border-bottom: 2px dotted black;
+  padding: 5px 2px 0 2px;
+ font-size: 36pt;
+ 
+}
+
+#bez2:focus { 
+  outline: none;
+  
+}
+#Test:hover
+{
+background:orange;
+}
+
+.outer {
+  position: absolute; 
+  top: 170px; 
+  left: 10px;
+  border: 2px solid brown;
+  border-radius: 1em;
+  background: red;
+  font-size: 20pt;
+  width: 12em;
+  height: 7em;
+  text-align: center;
+}
+.boilerplate {
+  color: white;
+  font-family: sans-serif;
+  padding: 0.5em;
+}
+#Vitaz{
+  color: black;
+  background: #00FFFF;
+  font-family: "Marker Felt", cursive;
+  font-size: 15pt;
+  padding-top: 0.2em;
+}
+#zn{  
+  position: absolute; 
+  top: 10px; 
+  left: 540px;
+  padding:25px;
+  border-radius: 90px; 
+
+
+  border: "1 solid";
+             margin: 15px;
+             font-size: 18pt; font-family: Arial;
+             font-weight: bold; 
+             background:blue;
+       -webkit-transition-property: background; 
+       -webkit-transition-duration: 5s; 
+      
+           }
+#ppr{  
+  position: absolute; 
+  top: 10px; 
+  left: 540px;
+  padding:25px;
+  border-radius: 90px; 
+
+
+  border: "1 solid";
+             margin: 15px;
+             font-size: 18pt; font-family: Arial;
+             font-weight: bold; 
+             background:green;
+       -webkit-transition-property: background; 
+       -webkit-transition-duration: 5s; 
+     }
+
+ #spravka{  
+  position: absolute; 
+  top: 360px; 
+  left: 15px;
+  padding:25px;
+  border-radius: 90px; 
+
+
+  border: "1 solid";
+             margin: 15px;
+             font-size: 18pt; font-family: Arial;
+             font-weight: bold; 
+             background:tomato;
+       -webkit-transition-property: background; 
+       -webkit-transition-duration: 5s; 
+     } 
+
+*

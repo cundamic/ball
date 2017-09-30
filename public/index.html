@@ -1,0 +1,1156 @@
+
+<!DOCTYPE html >
+<html>
+<head>
+		
+<meta charset="UTF-8">
+<style>
+body {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+}
+
+.closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px !important;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .closebtn {
+    font-size: 40px !important;
+    top: 15px;
+    right: 35px;
+  }
+}
+</style>
+ 
+
+
+    <title>NJ</title>
+<script >var menotestu ="nj8"; var kam ="js/"+menotestu+".js";</script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script> 
+
+<script src="js/jsBall.js"></script>
+<script src="js/socket.io-client.min.js"></script>
+<script src="js/mainBall.js"></script>
+<script>
+var names;
+socket.on("por", function(message) {
+ names = message; 
+ 
+  }); 
+</script>
+
+   <link rel="stylesheet" href="css/ball.css" />
+ </head>
+  
+
+<body style="cursor: help;" BGCOLOR="#BEC3BB"      onload="window.setTimeout('getSecs()',1);" onbeforeunload="return koniec();">
+<font color=red> <div id="spolokZ" style="position: absolute; top: 0px; left: 50px;"></div></font>
+<div id="Cisielka" style="position: absolute; top: 0px; left: 150px;background-color: 'yellow';"></div>
+<div id="Test" style="position: absolute; top: 160px; left: 520px;padding:25px;border-radius: 90px;"></div>
+<br><input type='button'  id="myHeader" name ='znova'  value='ZNOVU'onclick='repete();'>
+<input type='button' value='INÁ LEKCIA' onclick='kolacik()'>
+<input type='button' value='ZMEŇ EMAIL' onclick='zmenMeno()'>
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">☰ Akú lekciu mám?</span>
+<br><br>
+Čas:<span id="casOznam">..</span>Správne:<span id="spravneOznam">..</span>
+Odpovedí:<span id="kolkoOznam">...</span>
+Spolu bodov:<span id="Bodiky">...</span>
+<span id="znamka">...</span>
+Školský email:<span id="meno">...@zsgorazda.sk</span>
+
+
+<span id="Rebrik"></span>
+<div id ="messages2"></div>
+<br><br>
+
+ <div id="zn" style="visibility:hidden; position: absolute; top: 10px; left: 540px;padding:25px;border-radius: 90px;"></div>
+ <div id ="ppr" style="position: absolute; top: 200px; left: 15px;" ></div>
+ <div id="spravka" style="visibility:hidden;position: absolute; top: 350px; left: 15px;" > </div>
+
+ <div id="kres"></div>
+<div id="Vitaz" style="visibility:hidden; position: absolute; top: 80px; left: 540px;"></div>
+
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <div class="overlay-content">
+    <div ng-app="myApp" ng-controller="namesCtrl"  >
+
+<table border="1" width="100%" style="color:white;">
+<tr>
+<th ng-click="orderByMe('name')">Meno</th>
+<th ng-click="orderByMe('country')">Level</th>
+<th ng-click="orderByMe('tr')">Trieda</th>
+<th >Filter: <input type="text" ng-model="te"></th>
+</tr>
+<tr ng-repeat="x in names |filter :te |  orderBy:myOrderBy">
+<td>{{x.name}}</td>
+<td>{{x.country}}</td>
+<td>{{x.tr}}</td>
+<td><img ng-src="{{x.flagURL}}" width="100"></td>
+</tr>
+</table>
+
+</div> 
+  </div>
+</div>
+
+
+
+
+<script>
+function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+}
+</script>
+
+
+
+
+   
+  
+
+
+
+
+
+
+<script>
+
+angular.module('myApp', []).controller('namesCtrl', function($scope,$http) {
+   $http.get("js/poradie.json")
+   .then(function(response) {
+        $scope.names = response.data;
+        $scope.orderByMe = function(x) {
+        $scope.myOrderBy = x;
+    }
+    });
+ 
+
+    
+});
+ 
+
+function kresba()
+{
+ if (localStorage.getItem("UlozeneMeno")!=undefined)
+    {
+      meno=localStorage.getItem("UlozeneMeno");
+      document.getElementById("meno").innerHTML = localStorage.getItem("UlozeneMeno");
+       
+}
+
+for( i=0; i<20; i++ ) {
+
+kres.innerHTML+="<img  class ='q' name='que"+i+"' src='http://www.pechac.sk/skola/rgv/images/que.jpg' border='0' width='19' height='40' tabindex='1'>";
+if((i%20)==19) {kres.innerHTML+="<br>"+(rcislo+1)+"<br>";}
+
+}
+//spolokZ.innerText=spolok-1;
+
+}
+
+var otazka;
+var lekcia;
+checkCookie();
+var boloZle;
+var pOtazky=0;
+var cOtazky=0;
+var boloZle;
+
+function vOtazky(){
+
+  var pa=[ 12,
+  25,
+  39,
+  54,
+  69,
+  87,
+  106,
+  112,
+  121,
+  132,
+  148,
+  164,
+  181,
+  193,
+  200,
+  208,
+  217,
+  220,
+  229,
+  239,
+  250 ];
+
+lekcia=rcislo+1;
+
+
+
+  if(boloZle  == "n" ) {
+	  if (lekcia>5)
+		  {
+			  cOtazky=pa[4] +Math.floor(Math.random()*(pa[rcislo]-pa[4]));}
+	  else{cOtazky=Math.floor(Math.random()*pa[rcislo]);}
+	  
+ 
+  
+  }
+  
+
+
+
+
+socket.emit("cho",cOtazky);
+
+
+
+socket.on("choX", function(otazka) {
+       
+        
+         
+        ChangeIt("Test",otazka,pOtazky);
+        
+    });  
+
+
+
+}
+      
+
+
+
+vOtazky(); 
+
+       
+       
+        
+        
+     
+
+
+
+function koniec(){
+	socket.emit("close","pa");}
+
+
+
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

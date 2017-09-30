@@ -1,0 +1,79 @@
+﻿[
+{"name":"maj", "country":8, "tr":"8B" ,"flagURL": "/images/majerova.jpg"},
+
+{"name":"žal", "country":10, "tr":"8B" ,"flagURL": "/images/zaloudek.jpg"},
+
+{"name":"mich", "country":9, "tr":"8B" ,"flagURL": "/images/svk.png"},
+
+{"name":"pet", "country":11, "tr":"8B" ,"flagURL": "/images/petrickova.jpg"},
+
+{"name":"trn", "country":7, "tr":"8B" ,"flagURL": "/images/trnavsky.jpg"},
+
+{"name":"špa", "country":10, "tr":"8B" ,"flagURL": "/images/svk.png"},
+
+{"name":"tla", "country":11,"tr":"8B" ,"flagURL": "/images/tlach.jpg"},
+
+{"name":"ska", "country":5,"tr":"8B" ,"flagURL": "/images/skala.jpg"},
+
+{"name":"mar", "country":5,"tr":"8B" ,"flagURL": "/images/svk.png"},
+
+{"name":"vyl", "country":6,"tr":"8B" ,"flagURL": "/images/vyletelova.jpg"},
+
+{"name":"sta", "country":9,"tr":"8B" ,"flagURL": "/images/starinsky.jpg"},
+
+{"name":"tra", "country":11,"tr":"8B" ,"flagURL": "/images/trabalikova.jpg"},
+
+{"name":"mot", "country":8,"tr":"8C" ,"flagURL": "/images/motesicka.jpg"},
+
+{"name":"mat", "country":6,"tr":"8C" ,"flagURL": "/images/matulova.jpg"},
+
+{"name":"pal", "country":7,"tr":"8C" ,"flagURL": "/images/palusova.jpg"},
+
+{"name":"tar", "country":6,"tr":"8C" ,"flagURL": "/images/tarasovic.jpg"},
+
+{"name":"špl", "country":6,"tr":"8C" ,"flagURL": "/images/splhak.jpg"},
+
+{"name":"mel", "country":8,"tr":"8C" ,"flagURL": "/images/melkovic.jpg"},
+
+{"name":"zuz", "country":6,"tr":"8C" ,"flagURL": "/images/svk.png"},
+
+{"name":"top", "country":7,"tr":"8C" ,"flagURL": "/images/topolsky.jpg"},
+
+{"name":"mih", "country":8,"tr":"8C" ,"flagURL": "/images/miho.jpg"},
+
+{"name":"ole", "country":10,"tr":"8C" ,"flagURL": "/images/olejkarova.jpg"},
+
+{"name":"vrž", "country":8,"tr":"8C" ,"flagURL": "/images/vrzdak.jpg"},
+
+{"name":"mať", "country":10,"tr":"8C" ,"flagURL": "/images/svk.png"},
+
+{"name":"štr", "country":4,"tr":"7B" ,"flagURL": "/images/svk.png"},
+
+{"name":"paj", "country":2,"tr":"7B" ,"flagURL": "/images/pajtas.jpg"},
+
+{"name":"kov", "country":3,"tr":"7B","flagURL": "/images/svk.png"},
+
+{"name":"mach", "country":3,"tr":"7B","flagURL": "/images/svk.png"},
+
+{"name":"mur", "country":2,"tr":"7B","flagURL": "/images/murkova.jpg"},
+
+{"name":"rat", "country":3,"tr":"7B","flagURL": "/images/svk.png"},
+
+{"name":"plá", "country":3,"tr":"7B","flagURL": "/images/svk.png"},
+
+{"name":"trú", "country":4,"tr":"7B","flagURL": "/images/truchly.jpg"},
+
+{"name":"zuz", "country":3,"tr":"7B","flagURL": "/images/svk.png"},
+
+{"name":"jan", "country":1,"tr":"7B","flagURL": "/images/svk.png"},
+
+{"name":"kol", "country":5,"tr":"7B","flagURL": "/images/svk.png"},
+
+{"name":"ďur", "country":4,"tr":"7B","flagURL": "/images/svk.png"}
+
+
+
+
+
+]
+        
