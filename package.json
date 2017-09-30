@@ -4,7 +4,7 @@
   "description": "A sample socket io server",
   "main": "ball-server.js",
   "scripts": {
-    "start": "open http://localhost:3000 & node ball-server.js"
+    "start": "node ball-server.js"
   },
   "keywords": [
     "Socket",
@@ -18,6 +18,9 @@
     "express": "^4.13.3",
     "socket.io": "^1.3.7",
     "socket.io-client": "^1.3.7"
+  },
+  "engine": {
+    "node": "*",
+    "npm": "*"
   }
 }
-
